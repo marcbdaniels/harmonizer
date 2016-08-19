@@ -6472,8 +6472,8 @@ function findtheothernote(n) {
 var j1=document.getElementById('lo5th' + [n]).classList;
 var j2=document.getElementById('lo3rd' + [n]).classList;
 var j3=document.getElementById('melody' + [n]).classList;
-var j4=document.getElementById('hi3rd' + [n]).classList;
-var j5=document.getElementById('hi5th' + [n]).classList;
+var j4=document.getElementById('lo7th' + [n]).classList;
+var j5=document.getElementById('lo9th' + [n]).classList;
 var t;
 
 if (j1.contains("baseline","lastColumn","secondLast","key2") || j1==("lastColumn") || j1==("secondLast")) {
@@ -6492,14 +6492,14 @@ else if (j3.contains("baseline","lastColumn","secondLast","key2") || j3==("lastC
 	playit(t,'melody');
 	}
 else if (j4.contains("baseline","lastColumn","secondLast","key2") || j4==("lastColumn") || j4==("secondLast")) {
-	document.getElementById('hi3rd' +[n]).classList.add('playing');
-	t = document.getElementById('hi3rd' + [n]).value;
-	playit(t,'hi3rd');
+	document.getElementById('lo7th' +[n]).classList.add('playing');
+	t = document.getElementById('lo7th' + [n]).value;
+	playit(t,'lo7th');
 	}
 else if (j5.contains("baseline","lastColumn","secondLast","key2") || j5==("lastColumn") || j5==("secondLast")) {
-	document.getElementById('hi5th' +[n]).classList.add('playing');
-	t = document.getElementById('hi5th' + [n]).value;
-	playit(t,'hi5th');
+	document.getElementById('lo9th' +[n]).classList.add('playing');
+	t = document.getElementById('lo9th' + [n]).value;
+	playit(t,'lo9th');
 	}
 document.getElementById("yo").innerHTML = t;
 }
@@ -6509,8 +6509,8 @@ function findthechord(n) {
 var j1=document.getElementById('lo5th' + [n]).classList;
 var j2=document.getElementById('lo3rd' + [n]).classList;
 var j3=document.getElementById('melody' + [n]).classList;
-var j4=document.getElementById('hi3rd' + [n]).classList;
-var j5=document.getElementById('hi5th' + [n]).classList;
+var j4=document.getElementById('lo7th' + [n]).classList;
+var j5=document.getElementById('lo9th' + [n]).classList;
 var t1;
 var t3;
 var t5;
@@ -6529,30 +6529,30 @@ if (j1.contains("baseline","lastColumn","secondLast","key2")) {
 else if (j2.contains("baseline","lastColumn","secondLast","key2")) {
 	document.getElementById('lo3rd' +[n]).classList.add('playing');
 	document.getElementById('melody' +[n]).classList.add('playing');
-	document.getElementById('hi3rd' +[n]).classList.add('playing');
-	t1 = document.getElementById('lo3rd' + [n]).value;
+	document.getElementById('lo7th' +[n]).classList.add('playing');
+	t1 = document.getElementById('lo9th' + [n]).value;
 	t3 = document.getElementById('melody' + [n]).value;
-	t5 = document.getElementById('hi3rd' + [n]).value;
+	t5 = document.getElementById('lo7th' + [n]).value;
 	playit(t1,'lo3rd');
 	playit(t3,'melody');
-	playit(t5,'hi3rd');
+	playit(t5,'lo7th');
 	}
 else if (j3.contains("baseline","lastColumn","secondLast","key2")) {
 	document.getElementById('melody' +[n]).classList.add('playing');
-	document.getElementById('hi3rd' +[n]).classList.add('playing');
-	document.getElementById('hi5th' +[n]).classList.add('playing');
+	document.getElementById('lo7th' +[n]).classList.add('playing');
+	document.getElementById('lo9th' +[n]).classList.add('playing');
 	t1 = document.getElementById('melody' + [n]).value;
-	t3 = document.getElementById('hi3rd' + [n]).value;
-	t5 = document.getElementById('hi5th' + [n]).value;
+	t3 = document.getElementById('lo7th' + [n]).value;
+	t5 = document.getElementById('lo9th' + [n]).value;
 	playit(t1,'melody');
-	playit(t3,'hi3rd');
-	playit(t5,'hi5th');
+	playit(t3,'lo7th');
+	playit(t5,'lo9th');
 	}
 }
 
 function unplay(n) {
-	document.getElementById("hi5th" + [n]).classList.remove('playing');
-	document.getElementById("hi3rd" + [n]).classList.remove('playing');
+	document.getElementById("lo7th" + [n]).classList.remove('playing');
+	document.getElementById("lo9th" + [n]).classList.remove('playing');
 	document.getElementById("melody" + [n]).classList.remove('playing');
 	document.getElementById("lo3rd" + [n]).classList.remove('playing');
 	document.getElementById("lo5th" + [n]).classList.remove('playing');
@@ -6560,7 +6560,7 @@ function unplay(n) {
 
 function playit(t,trow) {
 
-if (trow=='hi5th') {
+if (trow=='lo9th') {
 	if (t=='09') {
 		document.getElementById("high_cflat").play();
 	}
@@ -6625,7 +6625,7 @@ if (trow=='hi5th') {
 		document.getElementById("high_bsharp").play();
 	}
 }
-else if (trow=='hi3rd') {
+else if (trow=='lo7th') {
 	if (t=='09') {
 		document.getElementById("middle_cflat").play();
 	}
