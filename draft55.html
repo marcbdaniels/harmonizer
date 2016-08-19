@@ -2312,7 +2312,7 @@ var firstrow=["melody01","lo3rd01","lo5th01"]; {
 var a;
 
 	for (a=0; a < firstrow.length; a++) {
- 	document.getElementById(firstrow[a]).classList.remove('baseline','imposed_harmonic');
+ 	document.getElementById(firstrow[a]).classList.remove('baseline','imposed_harmonic','secondLast');
 	}
 
 
@@ -2840,8 +2840,6 @@ var b;
 	} 
 }
 document.getElementById("openkey").innerHTML = key;
-
-/*HOLD UP! here we should modulate the whole table?*/
 
 lefttoright();
 
@@ -3631,9 +3629,9 @@ var z2 = document.getElementById('lo5th' + [col0]).classList;
 }
 
 function modulate(col0,col1,class1,keyside) {
- document.getElementById('melody' + [col0]).classList.remove('key2','imposed_harmonic');
- document.getElementById('lo3rd' + [col0]).classList.remove("key2","imposed_harmonic");
- document.getElementById('lo5th' + [col0]).classList.remove("key2","imposed_harmonic");
+ document.getElementById('melody' + [col0]).classList.remove('key2','imposed_harmonic','secondLast');
+ document.getElementById('lo3rd' + [col0]).classList.remove("key2","imposed_harmonic","secondLast");
+ document.getElementById('lo5th' + [col0]).classList.remove("key2","imposed_harmonic","secondLast");
 
  var p1 = document.getElementById('melody' + [col0]).value  ;
  var p2 = document.getElementById('melody' + [col1]).value  ;
@@ -3649,167 +3647,265 @@ function modulate(col0,col1,class1,keyside) {
 			if (p1=="09" || p1=="10" || p1=="11") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
-				}	
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
+				}
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="19" || p1=="20" || p1=="21") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="29" || p1=="30" || p1=="31") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="39" || p1=="40" || p1=="41") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="49" || p1=="50" || p1=="51") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="59" || p1=="60" || p1=="61") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}
 			}	
 			if (p1=="69" || p1=="70" || p1=="71") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 		}
@@ -3817,167 +3913,265 @@ function modulate(col0,col1,class1,keyside) {
 			if (p1=="09" || p1=="10" || p1=="11") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="19" || p1=="20" || p1=="21") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="29" || p1=="30" || p1=="31") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="39" || p1=="40" || p1=="41") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="49" || p1=="50" || p1=="51") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="59" || p1=="60" || p1=="61") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 			if (p1=="69" || p1=="70" || p1=="71") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
@@ -3987,167 +4181,265 @@ function modulate(col0,col1,class1,keyside) {
 			if (p1=="09" || p1=="10" || p1=="11") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="19" || p1=="20" || p1=="21") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="29" || p1=="30" || p1=="31") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="39" || p1=="40" || p1=="41") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="49" || p1=="50" || p1=="51") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 
 			if (p1=="59" || p1=="60" || p1=="61") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}
 			}	
 			if (p1=="69" || p1=="70" || p1=="71") {
 				if (p2=="09" || p2=="10" || p2=="11") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="19" || p2=="20" || p2=="21") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="29" || p2=="30" || p2=="31") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="39" || p2=="40" || p2=="41") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="49" || p2=="50" || p2=="51") {
 					document.getElementById('lo3rd' + [col1]).classList.add(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="59" || p2=="60" || p2=="61") {
 					document.getElementById('melody' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('lo5th' + [col1]).classList.remove(class1);
 				}	
 				else if (p2=="69" || p2=="70" || p2=="71") {
 					document.getElementById('lo5th' + [col1]).classList.add(class1);
+					document.getElementById('lo3rd' + [col1]).classList.remove(class1);
+					document.getElementById('melody' + [col1]).classList.remove(class1);
 				}
 			}	
 		}
@@ -4172,6 +4464,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody03','03');
+	lefttoright();
 	}
 function grey_at4() {
 dull_it();
@@ -4189,6 +4482,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody04','04');
+	lefttoright();
 	}
 
 function grey_at5() {
@@ -4207,6 +4501,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody05','05');
+	lefttoright();
 	}
 function grey_at6() {
 dull_it();
@@ -4224,6 +4519,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody06','06');
+	lefttoright();
 	}
 function grey_at7() {
 dull_it();
@@ -4241,6 +4537,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody07','07');
+	lefttoright();
 	}
 function grey_at8() {
 dull_it();
@@ -4258,6 +4555,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody08','08');
+	lefttoright();
 	}
 function grey_at9() {
 dull_it();
@@ -4275,6 +4573,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody09','09');
+	lefttoright();
 	}
 function grey_at10() {
 dull_it();
@@ -4292,6 +4591,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody10','10');
+	lefttoright();
 	}
 function grey_at11() {
 dull_it();
@@ -4309,6 +4609,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody11','11');
+	lefttoright();
 	}
 function grey_at12() {
 dull_it();
@@ -4326,6 +4627,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody12','12');
+	lefttoright();
 	}
 function grey_at13() {
 dull_it();
@@ -4343,6 +4645,7 @@ dull_it();
 	grey_column('14');
 	grey_column('15');
 	lastcol('melody13','13');
+	lefttoright();
 	}
 function grey_at14() {
 dull_it();
@@ -4360,6 +4663,7 @@ dull_it();
 	ungrey('14');
 	grey_column('15');
 	lastcol('melody14','14');
+	lefttoright();
 	}
 function grey_at15() {
 dull_it();
@@ -4377,6 +4681,7 @@ dull_it();
 	ungrey('14');
 	ungrey('15');
 	lastcol('melody15','15');
+	lefttoright();
 	}
 
 	function grey_column(i) {
@@ -4409,7 +4714,7 @@ var a;
 
 	for (a=0; a < lastrow.length; a++) {
 	document.getElementById(lastrow[a]).disabled=false;
- 	document.getElementById(lastrow[a]).classList.remove("baseline","lastColumn");
+ 	document.getElementById(lastrow[a]).classList.remove("baseline","lastColumn","secondLast");
 	}
 
 
@@ -4423,9 +4728,8 @@ w5 = document.getElementById("lo5th" + [n]).classList;
 
 /*assign the rightsidekey and calibrate here*/
 
-var cells = ["up5hi" +[n],"up3hi" +[n],"upmel" +[n],"up3lo" +[n],"up5lo" +[n],
-             "hi5th" +[n],"hi3rd" +[n],"melody" +[n],"lo3rd" +[n],"lo5th" +[n],
-             "lo7th" +[n],"lo9th" +[n],"lo11th" +[n],"do3lo" +[n],"do5lo" +[n]];
+var cells = ["melody" +[n],"lo3rd" +[n],"lo5th" +[n],
+             "lo7th" +[n],"lo9th" +[n],"lo11th" +[n]];
 var b;
     if (w=="09") {
     	rightsidekey = "Cflat";
@@ -5546,13 +5850,13 @@ function findafifth(o,p,q) {
 var a1 = document.getElementById("melody" + [o]);
 var a2 = document.getElementById("lo3rd" + [o]);
 var a3 = document.getElementById("lo5th" + [o]);
-var a4 = document.getElementById("hi3rd" + [o]);
-var a5 = document.getElementById("hi5th" + [o]);
+var a4 = document.getElementById("lo7th" + [o]);
+var a5 = document.getElementById("lo9th" + [o]);
 var b1 = document.getElementById("melody" + [p]);
 var b2 = document.getElementById("lo3rd" + [p]);
 var b3 = document.getElementById("lo5th" + [p]);
-var b4 = document.getElementById("hi3rd" + [p]);
-var b5 = document.getElementById("hi5th" + [p]);
+var b4 = document.getElementById("lo7th" + [p]);
+var b5 = document.getElementById("lo9th" + [p]);
 
 var z = document.getElementById("melody" + [q]);
 
@@ -5742,10 +6046,10 @@ if ((!b1.classList.contains("grey_out")) && (z.classList.contains('grey_out'))){
 					}
 				
 			}
-		a1.classList.remove("baseline","key2");
-		a2.classList.remove("baseline","key2");
-		a4.classList.remove("baseline","key2");
-		a5.classList.remove("baseline","key2");
+		a1.classList.remove("baseline","key2","secondLast");
+		a2.classList.remove("baseline","key2","secondLast");
+		a4.classList.remove("baseline","key2","secondLast");
+		a5.classList.remove("baseline","key2","secondLast");
 		}	
 	}
 
@@ -6543,8 +6847,8 @@ else if (b3.classList.contains("baseline","key2")) {
 var a1 = document.getElementById("melody" + [n1]);
 var a2 = document.getElementById("lo3rd" + [n1]);
 var a3 = document.getElementById("lo5th" + [n1]);
-var a4 = document.getElementById("hi3rd" + [n1]);
-var a5 = document.getElementById("hi5th" + [n1]);
+var a4 = document.getElementById("lo7th" + [n1]);
+var a5 = document.getElementById("lo9th" + [n1]);
 
 var root;
 var minor_third;
