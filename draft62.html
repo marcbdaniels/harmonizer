@@ -6141,7 +6141,8 @@ table select button {
 <td colspan=2><button type=button onclick="righttoleft()">Right to Left</button></td></tr>
 <tr><td>&nbsp;</td>
 <td colspan=2>Starting Key: <p id="openkey"></p></td>
-<td colspan=11><p id="yo">&nbsp;</p></td>
+<td colspan=9><p id="yo">&nbsp;</p></td>
+<td colspan=2><button type=button onclick="playadded()">Added Chord</button></td>
 <td colspan=2>Resting Key: <p id="restingkey"></p></td>
 </tr>
 </table>
@@ -6778,47 +6779,131 @@ var cells = ["up5hi" +[n],"up3hi" +[n],"upmel" +[n],"up3lo" +[n],"up5lo" +[n],
              "do5hi" +[n],"do3hi" +[n],"domel" +[n],"do3lo" +[n],"do5lo" +[n],"do7lo" +[n],"do9lo" +[n]];
 var b;
 if (!y.contains('lastColumn')) {
-    if (x=="09" || x=="10" || x=="11") {
+    if (x=="10") {
     		var notes = ["10","60","40","20","70","50","30",x,"60","40","20","70","50","30","10","60","40"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
 	}
 
-    if (x=="19" || x=="20" || x=="21") {
+    if (x=="09") {
+    		var notes = ["09","60","40","20","70","50","30",x,"60","40","20","70","50","30","09","60","40"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="11") {
+    		var notes = ["11","60","40","20","70","50","30",x,"60","40","20","70","50","30","11","60","40"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="20") {
     		var notes = ["20","70","50","30","10","60","40",x,"70","50","30","10","60","40","20","70","50"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
 	}
+    if (x=="19") {
+    		var notes = ["19","70","50","30","10","60","40",x,"70","50","30","10","60","40","19","70","50"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="21") {
+    		var notes = ["21","70","50","30","10","60","40",x,"70","50","30","10","60","40","21","70","50"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
 
-    if (x=="29" || x=="30" || x=="31") {
+    if (x=="30") {
     		var notes = ["30","10","60","40","20","70","50",x,"10","60","40","20","70","50","30","10","60"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
 	}
-    if (x=="39" || x=="40" || x=="41") {
+    if (x=="29") {
+    		var notes = ["29","10","60","40","20","70","50",x,"10","60","40","20","70","50","29","10","60"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="31") {
+    		var notes = ["31","10","60","40","20","70","50",x,"10","60","40","20","70","50","31","10","60"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="40") {
  		var notes = ["40","20","70","50","30","10","60",x,"20","70","50","30","10","60","40","20","70"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
 	}
+    if (x=="39") {
+ 		var notes = ["39","20","70","50","30","10","60",x,"20","70","50","30","10","60","39","20","70"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="41") {
+ 		var notes = ["41","20","70","50","30","10","60",x,"20","70","50","30","10","60","41","20","70"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
 
-    if (x=="49" || x=="50" || x=="51") {
+    if (x=="50") {
     	var notes = ["50","30","10","60","40","20","70",x,"30","10","60","40","20","70","50","30","10"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
 	}
-    if (x=="59" || x=="60" || x=="61") {
+    if (x=="49") {
+    	var notes = ["49","30","10","60","40","20","70",x,"30","10","60","40","20","70","49","30","10"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="51") {
+    	var notes = ["51","30","10","60","40","20","70",x,"30","10","60","40","20","70","51","30","10"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="60") {
 		var notes = ["60","40","20","70","50","30","10",x,"40","20","70","50","30","10","60","40","20"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
 	}
-    if (x=="69" || x=="70" || x=="71") {
+    if (x=="59") {
+		var notes = ["59","40","20","70","50","30","10",x,"40","20","70","50","30","10","59","40","20"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="61") {
+		var notes = ["61","40","20","70","50","30","10",x,"40","20","70","50","30","10","61","40","20"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="70") {
     	var notes = ["70","50","30","10","60","40","20",x,"50","30","10","60","40","20","70","50","30"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="69") {
+    	var notes = ["69","50","30","10","60","40","20",x,"50","30","10","60","40","20","69","50","30"];
+			for (b=0; b < cells.length; b++) {
+		    	document.getElementById(cells[b]).value=notes[b];
+		}
+	}
+    if (x=="71") {
+    	var notes = ["71","50","30","10","60","40","20",x,"50","30","10","60","40","20","71","50","30"];
 			for (b=0; b < cells.length; b++) {
 		    	document.getElementById(cells[b]).value=notes[b];
 		}
@@ -9823,7 +9908,21 @@ if (!document.getElementById("melody15").classList.contains('grey_out')) {
 	document.getElementById("lo3rd15").classList.remove('playing');
 	document.getElementById("lo5th15").classList.remove('playing');
 	}
-
+	unplay('01');
+	unplay('02');
+	unplay('03');
+	unplay('04');
+	unplay('05');
+	unplay('06');
+	unplay('07');
+	unplay('08');
+	unplay('09');
+	unplay('10');
+	unplay('11');
+	unplay('12');
+	unplay('13');
+	unplay('14');
+	unplay('15');
 }
 function playbass() {
 
@@ -9916,6 +10015,21 @@ if (!document.getElementById("melody15").classList.contains('grey_out')) {
 	},timebomb);
 	document.getElementById("melody15").classList.remove('playing');
 	}
+	unplay('01');
+	unplay('02');
+	unplay('03');
+	unplay('04');
+	unplay('05');
+	unplay('06');
+	unplay('07');
+	unplay('08');
+	unplay('09');
+	unplay('10');
+	unplay('11');
+	unplay('12');
+	unplay('13');
+	unplay('14');
+	unplay('15');
 }
 function playboth() {
 
@@ -10006,6 +10120,9 @@ if (!document.getElementById("melody15").classList.contains('grey_out')) {
 	unplay('14');
 	findtheothernote('15');
 	},timebomb);
+}
+	unplay('01');
+	unplay('02');
 	unplay('03');
 	unplay('04');
 	unplay('05');
@@ -10019,7 +10136,113 @@ if (!document.getElementById("melody15").classList.contains('grey_out')) {
 	unplay('13');
 	unplay('14');
 	unplay('15');
-	}
+}
+
+function playadded() {
+
+var timebomb = 0;
+
+//findtheothernote('01','01');
+findtheadded('01');
+	timebomb = timebomb + 800;
+setTimeout(function(){
+	unplay('01');
+	findtheadded('02');
+	},timebomb);
+	timebomb = timebomb + 800;
+if (!document.getElementById("melody03").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('02');
+	findtheadded('03');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody04").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('03');
+	findtheadded('04');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody05").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('04');
+	findtheadded('05');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody06").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('05');
+	findtheadded('06');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody07").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('06');
+	findtheadded('07');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody08").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('07');
+	findtheadded('08');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody09").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('08');
+	findtheadded('09');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody10").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('09');
+	findtheadded('10');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody11").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('10');
+	findtheadded('11');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody12").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('11');
+	findtheadded('12');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody13").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('12');
+	findtheadded('13');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody14").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('13');
+	findtheadded('14');
+	},timebomb);
+	timebomb = timebomb + 800;}
+if (!document.getElementById("melody15").classList.contains('grey_out')) {
+	setTimeout(function(){
+	unplay('14');
+	findtheothernote('15');
+	},timebomb);
+}
+	unplay('01');
+	unplay('02');
+	unplay('03');
+	unplay('04');
+	unplay('05');
+	unplay('06');
+	unplay('07');
+	unplay('08');
+	unplay('09');
+	unplay('10');
+	unplay('11');
+	unplay('12');
+	unplay('13');
+	unplay('14');
+	unplay('15');
 }
 
 function findthenote(n,n1) {
@@ -10153,6 +10376,104 @@ else if (j5.contains("baseline","lastColumn","secondLast","key2") || j5.contains
 	playit(t1,'melody');
 	playit(t3,'lo3rd');
 	playit(t5,'lo5th');
+	}
+}
+
+function findtheadded(n) {
+
+var j1=document.getElementById('hi5th' + [n]).classList;
+var j2=document.getElementById('hi3rd' + [n]).classList;
+var j3=document.getElementById('melody' + [n]).classList;
+var j4=document.getElementById('lo3rd' + [n]).classList;
+var j5=document.getElementById('lo5th' + [n]).classList;
+var ja=document.getElementById('up5lo' + [n]).classList;
+var t1;
+var t3;
+var t5;
+var t0;
+var ta;
+
+if (j1.contains("baseline","lastColumn","secondLast","key2") || j1.contains("lastColumn") || j1.contains("secondLast") || j1.contains("key2")) {
+	document.getElementById('melody' +[n]).classList.add('playing');
+	document.getElementById('do5hi' +[n]).classList.add('playing');
+	document.getElementById('do3hi' +[n]).classList.add('playing');
+	document.getElementById('domel' +[n]).classList.add('playing');
+	document.getElementById('up5lo' +[n]).classList.add('playing');
+	t0 = document.getElementById('melody' + [n]).value;
+	t1 = document.getElementById('do5hi' + [n]).value;
+	t3 = document.getElementById('do3hi' + [n]).value;
+	t5 = document.getElementById('domel' + [n]).value;
+	ta = document.getElementById('up5lo' + [n]).value;
+	playit(t0,'melody');
+	playit(t1,'do5hi');
+	playit(t3,'do3hi');
+	playit(t5,'domel');
+	playit(ta,'up5lo');
+	}
+else if (j2.contains("baseline","lastColumn","secondLast","key2") || j2.contains("lastColumn") || j2.contains("secondLast") || j2.contains("key2")) {
+	document.getElementById('melody' +[n]).classList.add('playing');
+	document.getElementById('do3hi' +[n]).classList.add('playing');
+	document.getElementById('domel' +[n]).classList.add('playing');
+	document.getElementById('do3lo' +[n]).classList.add('playing');
+	document.getElementById('hi3rd' +[n]).classList.add('playing');
+	t0 = document.getElementById('melody' + [n]).value;
+	t1 = document.getElementById('do3hi' + [n]).value;
+	t3 = document.getElementById('domel' + [n]).value;
+	t5 = document.getElementById('do3lo' + [n]).value;
+	ta = document.getElementById('hi3rd' + [n]).value;
+	playit(t0,'melody');
+	playit(t1,'do3hi');
+	playit(t3,'domel');
+	playit(t5,'do3lo');
+	playit(ta,'hi3rd');
+	}
+else if (j3.contains("baseline","lastColumn","secondLast","key2") || j3.contains("lastColumn") || j3.contains("secondLast") || j3.contains("key2")) {
+	document.getElementById('melody' +[n]).classList.add('playing');
+	document.getElementById('do5lo' +[n]).classList.add('playing');
+	document.getElementById('domel' +[n]).classList.add('playing');
+	document.getElementById('do3lo' +[n]).classList.add('playing');
+	document.getElementById('hi3rd' +[n]).classList.add('playing');
+	t0 = document.getElementById('melody' + [n]).value;
+	t1 = document.getElementById('do5lo' + [n]).value;
+	t3 = document.getElementById('domel' + [n]).value;
+	t5 = document.getElementById('do3lo' + [n]).value;
+	ta = document.getElementById('hi3rd' + [n]).value;
+	playit(t0,'melody');
+	playit(t1,'do5lo');
+	playit(t3,'domel');
+	playit(t5,'do3lo');
+	playit(ta,'hi3rd');
+	}
+else if (j4.contains("baseline","lastColumn","secondLast","key2") || j4.contains("lastColumn") || j4.contains("secondLast") || j4.contains("key2")) {
+	document.getElementById('melody' +[n]).classList.add('playing');
+	document.getElementById('do7lo' +[n]).classList.add('playing');
+	document.getElementById('do5lo' +[n]).classList.add('playing');
+	document.getElementById('do3lo' +[n]).classList.add('playing');
+	document.getElementById('hi3rd' +[n]).classList.add('playing');
+	t0 = document.getElementById('melody' + [n]).value;
+	t1 = document.getElementById('do7lo' + [n]).value;
+	t3 = document.getElementById('do5lo' + [n]).value;
+	t5 = document.getElementById('do3lo' + [n]).value;
+	ta = document.getElementById('hi3rd' + [n]).value;
+	playit(t0,'melody');
+	playit(t1,'do7lo');
+	playit(t3,'do5lo');
+	playit(t5,'do3lo');
+	playit(ta,'hi3rd');
+	}
+else if (j5.contains("baseline","lastColumn","secondLast","key2") || j5.contains("lastColumn") || j5.contains("secondLast") || j5.contains("key2")) {
+	document.getElementById('melody' +[n]).classList.add('playing');
+	document.getElementById('lo3rd' +[n]).classList.add('playing');
+	document.getElementById('lo5th' +[n]).classList.add('playing');
+	document.getElementById('hi3rd' +[n]).classList.add('playing');
+	t1 = document.getElementById('melody' + [n]).value;
+	t3 = document.getElementById('lo3rd' + [n]).value;
+	t5 = document.getElementById('lo5th' + [n]).value;
+	ta = document.getElementById('hi3rd' + [n]).value;
+	playit(t1,'melody');
+	playit(t3,'lo3rd');
+	playit(t5,'lo5th');
+	playit(ta,'hi3rd');
 	}
 }
 
@@ -10838,7 +11159,7 @@ function playloop() {
 var buttonsays = document.getElementById("buttonloop").value;
 
 if (buttonsays = "Play Loop") {
-	document.getElementById("buttonloop").value = "Stop Loop";
+playchord();
 	}
 if (buttonsays = "Stop Loop") {
 	document.getElementById("buttonloop").value = "Play Loop";
